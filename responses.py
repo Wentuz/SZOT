@@ -1,4 +1,5 @@
 from random import choice, randint
+from num_guess import rand_number, guess_number
 
 def get_response(user_input: str) -> str:
     lowered: str = user_input.lower()
@@ -11,6 +12,10 @@ def get_response(user_input: str) -> str:
         return 'ci@o !'
     elif 'roll' in lowered:
         return f'You rolled {randint(1,6)} !'
+    elif 'generate number' in lowered:
+        return rand_number()
+    elif 'guess num' in lowered:
+        return guess_number()
     else:
         return choice(['Sorry... What ?',
                         'I don\'t get it...',
