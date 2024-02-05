@@ -3,6 +3,10 @@ import os
 from dotenv import load_dotenv
 from discord import Intents, Client, Message
 from responses import get_response
+from num_guess import guess_number
+from daily_num import daily_number
+from random import randint
+import time
 
 
 load_dotenv()
@@ -23,10 +27,18 @@ async def send_message(message: Message, user_message: str) -> None:
         user_message = user_message[1:]
     
     try:
-        response: str = get_response(user_message)
+        if 'guess ' in user_message:
+            response: str = guess_number(user_message, random_number)
+        elif 'generate number' in user_message:
+            response: str = 'brrr' 
+        else:
+            response: str = get_response(user_message)
         await message.author.send(response) if is_private else await message.channel.send(response)
     except Exception as e:
         print(e)
+
+
+random_number = daily_number()
 
 
 @client.event
