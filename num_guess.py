@@ -1,4 +1,4 @@
-from random import choice
+from random import choice, randint
 
 
 def guess_number(user_input, generated_number) -> str:

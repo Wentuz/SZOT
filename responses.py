@@ -1,4 +1,5 @@
-from random import choice, randint
+from random import choice
+from roll_dice import get_roll
 
 def get_response(user_input: str) -> str:
     lowered: str = user_input.lower()
@@ -9,8 +10,8 @@ def get_response(user_input: str) -> str:
         return 'Ohaio !'
     elif 'bye' in lowered:
         return 'ci@o !'
-    elif 'roll' in lowered:
-        return f'You rolled {randint(1,6)} !'
+    elif lowered[1] == 'r':
+        return get_roll(lowered)
     else:
         return choice(['Sorry... What ?',
                         'I don\'t get it...',
