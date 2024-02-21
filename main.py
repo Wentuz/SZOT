@@ -25,7 +25,7 @@ async def send_message(message: Message, user_message: str) -> None:
     if is_private := user_message[0] == '?':
         user_message = user_message[1:]
     
-    try:
+    try: #Bot Commands
         if user_message[0] == '!':
             response: str = get_response(user_message)
 
