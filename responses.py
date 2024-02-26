@@ -22,7 +22,8 @@ def get_response(user_input: str) -> str:
         return get_roll(lowered)
     elif lowered[1] == 'g':
         return guess_number(lowered, generate_number())
-    
+    elif 'help' in lowered:
+        return '1. !wh (file_name) - quick encyclopedia, write list in filename for more\n2. !r (2d20) - roll a die\n3. !generate - generate number\n4. !g (number) - guess a number'
     #else:
     #    return choice(['Sorry... What ?',
     #                    'I don\'t get it...',
