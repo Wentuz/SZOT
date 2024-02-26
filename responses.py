@@ -2,6 +2,7 @@ from random import choice
 from roll_dice import get_roll
 from num_guess import guess_number
 from gen_num import generate_number
+from readWH import read_WH
 
 
 def get_response(user_input: str) -> str:
@@ -12,8 +13,8 @@ def get_response(user_input: str) -> str:
         return 'So... You\'re not very talkative person'
     elif 'hello' in lowered:
         return 'Ohaio !'
-    #elif 'bye' in lowered:
-    #    return 'ci@o !'
+    elif lowered[1] == 'w' and lowered[2] == 'h':
+        return read_WH(lowered)
     elif 'generate' in lowered:
         number:int = generate_number()
         return f'Generating number...{number}'
