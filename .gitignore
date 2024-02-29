@@ -1,0 +1,18 @@
+# Ignore compiled Python files
+*.pyc
+
+# Ignore files in the __pycache__ directory
+__pycache__
+
+# Ignore virtual environment directory
+venv/
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+
+# Ignore sensitive or private information
+config.json
+secrets.txt
+
+.env
