@@ -1,6 +1,19 @@
 {
-    "list": "weapons, ",
-    "weapons": "a knife lol",
+    "list": {
+        "1": "> 1) mBasic\n",
+        "2": "> 2) levelups\n",
+        "3": "> 3) CA\n",
+        "4": "> 4) 12345\n"
+      },
+    "mbasic": {
+        "1": "> 1. Hand weapon : 1GC 1 Common Average +SB+4 none\n",
+        "2": "> 2. Improvised Weapon: N/A Varies N/A Varies +SB+1 Undamaging\n",
+        "3": "> 3. Dagger: 16/- 0 Common Very Short +SB+2 none\n",
+        "4": "> 4. Knife: 8/- 0 Common Very Short +SB+1 Undamaging\n",
+        "5": "> 5. Shield (Buckler): 18/2 0 Common Personal +SB+1 Shield 1, Defensive, Undamaging\n",
+        "6": "> 6. Shield: 2GC 1 Common Very Short +SB+2 Shield 2, Defensive, Undamaging\n",
+        "7": "> 7. Shield (Large) 3GC 3 Common Very Short +SB+3 Shield 3, Defensive, Undamaging\n"
+    },
     "age": 30,
     "email": "john.doe@example.com",
     "levelups": ""

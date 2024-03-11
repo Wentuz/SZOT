@@ -8,8 +8,13 @@ def read_WH(user_input: str) -> str:
     
     cut_lib = user_input[4:]
     lib = library[f'{cut_lib}']
+    response = ''
 
-    return lib
+    for x in lib:
+        response = response + '' + lib[x]
+
+    print(response)
+    return response
 
 if __name__ == '__main__':
-    read_WH("!wh weapons")
+    read_WH("!wh mbasic")
