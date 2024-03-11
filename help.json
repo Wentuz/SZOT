@@ -1,0 +1,6 @@
+{
+    "1": "!wh (file_name) - quick encyclopedia, write 'list' in filename for more\n",
+    "2": "!r (2d20) - roll a die\n",
+    "3": "!generate - generate number\n",
+    "4": "!g (number) - guess a number"
+}

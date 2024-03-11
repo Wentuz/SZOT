@@ -3,6 +3,20 @@ from roll_dice import get_roll
 from num_guess import guess_number
 from gen_num import generate_number
 from readWH import read_WH
+import json
+
+def get_help() -> str:
+    file_path:str = "help.json"
+    with open(file_path, 'r') as file:
+        library:list = json.load(file)
+    
+    response = ''
+
+    for x in library:
+        response = response + '' + library[x]
+
+    #print(response)
+    return response
 
 
 def get_response(user_input: str) -> str:
@@ -23,7 +37,8 @@ def get_response(user_input: str) -> str:
     elif lowered[1] == 'g':
         return guess_number(lowered, generate_number())
     elif 'help' in lowered:
-        return '1. !wh (file_name) - quick encyclopedia, write list in filename for more\n2. !r (2d20) - roll a die\n3. !generate - generate number\n4. !g (number) - guess a number'
+        return get_help()
+    #'1. !wh (file_name) - quick encyclopedia, write list in filename for more\n2. !r (2d20) - roll a die\n3. !generate - generate number\n4. !g (number) - guess a number'
     #else:
     #    return choice(['Sorry... What ?',
     #                    'I don\'t get it...',
