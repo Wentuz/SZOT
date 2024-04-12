@@ -1,5 +1,5 @@
 {
-    "1": "> 1) !wh (file_name) - quick encyclopedia, write 'list' in filename for more\n",
+    "1": "> 1) !p (url) - play a video, must be connected to a vc\n",
     "2": "> 2) !r (2d20) - roll a die\n",
     "3": "> 3) !generate - generate number\n",
     "4": "> 4) !g (number) - guess a number"
