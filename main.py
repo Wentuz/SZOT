@@ -1,10 +1,11 @@
 from typing import Final
 import os
-from dotenv import load_dotenv
-from discord import Intents, Client, Message, Interaction
 import discord
+from dotenv import load_dotenv
 from discord.ext import commands
 from responses import get_response_command
+from discord import Intents, Client, Message, Interaction
+import roll_dice
 
 
 
@@ -17,10 +18,20 @@ intents.message_content = True # NOQA
 client: Client = commands.Bot(command_prefix="!" ,intents=intents)
 
 
+#====================================================================================
+#====================================================================================
+#====================================================================================
+
+
 @client.tree.command(name="ping", description="shows your ping")
 async def ping(interaction: Interaction):
     latency = round(client.latency*1000)
-    await interaction.response.send_message(f"Pong!... {latency}ms")
+    await interaction.response.send_message(f"Pong!... {latency}ms!")
+
+
+@client.tree.command(name="roll", description="Roll a dice")
+async def roll(interacion: Interaction):
+    await interacion.response.send_message("rolling")
 
 
 async def send_message(message: Message, user_message: str) -> None:
@@ -37,7 +48,9 @@ async def send_message(message: Message, user_message: str) -> None:
         print(e)
 
 
-
+#====================================================================================
+#====================================================================================
+#====================================================================================
 
 
 @client.event
