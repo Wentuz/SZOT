@@ -1,4 +1,3 @@
-from random import choice
 from roll_dice import get_roll
 from num_guess import guess_number
 from gen_num import generate_number
