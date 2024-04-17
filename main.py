@@ -26,7 +26,6 @@ client: Client = commands.Bot(command_prefix="!" ,intents=intents)
 @client.tree.command(name="r", description="rolls a dice")
 async def dice(interaction: Interaction, num_dice: int, value_dice: int):
     response = get_roll(num_dice, value_dice)
-    print(response)
     await interaction.response.send_message(response)
 
 @client.tree.command(name="ping", description="shows your ping")
@@ -43,6 +42,8 @@ async def send_message(message: Message, user_message: str) -> None:
         return
         
     try: #Bot Commands
+        if client.user.mentioned_in(message):
+            response: str = "Sup kitten ᓚᘏᗢ ?"
         if user_message[0] == '!':
             response: str = get_response_command(user_message)
         
