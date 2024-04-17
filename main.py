@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from discord.ext import commands
 from responses import get_response_command
 from discord import Intents, Client, Message, Interaction
-import roll_dice
+from roll_dice import get_roll
 
 
 
@@ -23,15 +23,18 @@ client: Client = commands.Bot(command_prefix="!" ,intents=intents)
 #====================================================================================
 
 
+@client.tree.command(name="r", description="rolls a dice")
+async def dice(interaction: Interaction, num_dice: int, value_dice: int):
+    response = get_roll(num_dice, value_dice)
+    print(response)
+    await interaction.response.send_message(response)
+
 @client.tree.command(name="ping", description="shows your ping")
 async def ping(interaction: Interaction):
     latency = round(client.latency*1000)
     await interaction.response.send_message(f"Pong!... {latency}ms!")
 
 
-@client.tree.command(name="roll", description="Roll a dice")
-async def roll(interacion: Interaction):
-    await interacion.response.send_message("rolling")
 
 
 async def send_message(message: Message, user_message: str) -> None:

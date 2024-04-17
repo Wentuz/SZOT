@@ -1,20 +1,18 @@
 from random import randint
 import re
 
-def get_roll(user_input: str) -> int:
-    tab:int = re.findall(r'\d+', user_input)
+def get_roll(num_dice, value_dice) -> int:
     
-    tab:int = list(map(int, tab))
-    
-    num_dice:int = tab[0]
-    num_size:int = tab[1]
     result = []
 
     while num_dice > 0:
-        value:int = randint(1, num_size)
+        value:int = randint(1, value_dice)
         print(value)
         num_dice = num_dice - 1
 
         result.append(value)
 
     return result
+
+if __name__ == '__main__':
+    get_roll(3, 20)
