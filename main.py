@@ -6,6 +6,7 @@ from discord.ext import commands
 from responses import get_response_command
 from discord import Intents, Client, Message, Interaction
 from roll_dice import get_roll
+from truth_or_dare import get_truth_or_dare
 
 
 
@@ -28,10 +29,18 @@ async def dice(interaction: Interaction, num_dice: int, value_dice: int):
     response = get_roll(num_dice, value_dice)
     await interaction.response.send_message(response)
 
-@client.tree.command(name="ping", description="shows your ping")
+@client.tree.command(name="pings", description="shows your ping")
 async def ping(interaction: Interaction):
     latency = round(client.latency*1000)
     await interaction.response.send_message(f"Pong!... {latency}ms!")
+
+@client.tree.command(name="truth", description="or dare ?")
+async def ping(interaction: Interaction):
+    await interaction.response.send_message(get_truth_or_dare(0))
+
+@client.tree.command(name="dare", description="or truth ?")
+async def ping(interaction: Interaction):
+    await interaction.response.send_message(get_truth_or_dare(1))
 
 
 
