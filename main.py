@@ -42,9 +42,9 @@ async def send_message(message: Message, user_message: str) -> None:
         return
         
     try: #Bot Commands
+        #if client.user.mentioned_in(message):
+        #    response: str = "Sup kitten ᓚᘏᗢ ?"
         if client.user.mentioned_in(message):
-            response: str = "Sup kitten ᓚᘏᗢ ?"
-        if user_message[0] == '!':
             response: str = get_response_command(user_message)
         
         await message.channel.send(response) 
