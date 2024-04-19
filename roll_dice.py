@@ -1,5 +1,5 @@
 from random import randint
-import re
+
 
 def get_roll(num_dice, value_dice) -> int:
     
