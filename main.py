@@ -7,6 +7,7 @@ from responses import get_response_command
 from discord import Intents, Client, Message, Interaction
 from roll_dice import get_roll
 from truth_or_dare import get_truth_or_dare
+from art_prompts import get_art_prompt
 
 
 
@@ -41,6 +42,12 @@ async def ping(interaction: Interaction):
 @client.tree.command(name="dare", description="or truth ?")
 async def ping(interaction: Interaction):
     await interaction.response.send_message(get_truth_or_dare(1))
+
+@client.tree.command(name="art_promtp", description="makes u autistic")
+async def dice(interaction: Interaction, appearance: int, emotion: int, action: int):
+    response = get_art_prompt(appearance, emotion, action)
+    await interaction.response.send_message(response)
+
 
 
 

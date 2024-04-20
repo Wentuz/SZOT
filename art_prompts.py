@@ -21,13 +21,13 @@ def get_art_prompt(appearance_num: int, emotion_num: int, action_num: int) -> st
         
 
         while appearance_num > 0:
-            response = response + ", " + random.choice(appearance)
+            response = response + " " + random.choice(appearance)
             appearance_num = appearance_num - 1
         while emotion_num > 0:
-            response = response + ", "+ random.choice(emotion)
+            response = response + " "+ random.choice(emotion)
             emotion_num = emotion_num - 1
         while action_num > 0:
-            response = response + ", " + random.choice(action)
+            response = response + " " + random.choice(action)
             action_num = action_num - 1
 
 
