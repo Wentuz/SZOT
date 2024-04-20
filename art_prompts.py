@@ -1,18 +1,14 @@
-import json
 import random
+import json
 
 
+file_path = 'prompts_art.json'
+
+def get_art_prompt(appearance_num: int, emotion_num: int, action_num: int) -> str:
 
 
-def get_truth_or_dare(user_input: int) -> str:
-
-    if user_input == 1:
-        file_path = 'dares'
-    else:
-        file_path = 'truths'
-    
     try:
-        with open(file_path + '.json', 'r') as file:
+        with open(file_path, 'r') as file:
             data = json.load(file)
         
         responses = data.get(file_path, [])
@@ -26,5 +22,5 @@ def get_truth_or_dare(user_input: int) -> str:
 
 
 if __name__ == '__main__':
-    print(get_truth_or_dare(1))
-    print(get_truth_or_dare(0))
+    print(get_art_prompt(1,2,3))
+    print(get_art_prompt(0,3,0))

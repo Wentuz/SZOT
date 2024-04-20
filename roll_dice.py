@@ -1,6 +1,9 @@
 from random import randint
 
 
+
+
+
 def get_roll(num_dice, value_dice) -> int:
     
     result = []
