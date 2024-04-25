@@ -48,6 +48,11 @@ async def dice(interaction: Interaction, appearance: int, emotion: int, action: 
     response = get_art_prompt(appearance, emotion, action)
     await interaction.response.send_message(response)
 
+@client.tree.command(name="testing", description="used for tests by devs")
+async def testComm(interaction: Interaction):
+    response = "test !"    
+    await interaction.response.send_message(response)
+
 
 
 
