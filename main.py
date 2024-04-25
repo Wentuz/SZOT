@@ -50,7 +50,7 @@ async def dice(interaction: Interaction, appearance: int, emotion: int, action: 
 
 @client.tree.command(name="testing", description="used for tests by devs")
 async def testComm(interaction: Interaction):
-    response = "test !"    
+    response = "test woo hoo !"    
     await interaction.response.send_message(response)
 
 
@@ -59,10 +59,9 @@ async def testComm(interaction: Interaction):
 #====================================================================================
 
 
-@client.event
-async def on_reaction_add(reaction, user):
-    response = "test !"    
-    await send_message(response)
+
+
+
 
 
 #====================================================================================
