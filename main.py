@@ -8,6 +8,7 @@ from discord import Intents, Client, Message, Interaction
 from roll_dice import get_roll
 from truth_or_dare import get_truth_or_dare
 from art_prompts import get_art_prompt
+from text_to_binary import *
 
 
 
@@ -44,14 +45,23 @@ async def ping(interaction: Interaction):
     await interaction.response.send_message(get_truth_or_dare(1))
 
 @client.tree.command(name="art_promtp", description="makes u autistic")
-async def dice(interaction: Interaction, appearance: int, emotion: int, action: int):
+async def art_prompts(interaction: Interaction, appearance: int, emotion: int, action: int):
     response = get_art_prompt(appearance, emotion, action)
     await interaction.response.send_message(response)
 
-@client.tree.command(name="testing", description="used for tests by devs")
-async def testComm(interaction: Interaction):
-    response = "test woo hoo !"    
+@client.tree.command(name="to_binary", description="convert text to binary")
+async def text_2_binary(interaction: Interaction, text: str):
+    response = text_to_binary(text)   
     await interaction.response.send_message(response)
+
+@client.tree.command(name="to_text", description="used for tests by devs")
+async def binary_2_text(interaction: Interaction, binary: str):
+    response = binary_to_text(binary)   
+    await interaction.response.send_message(response)
+
+
+
+
 
 
 #====================================================================================
@@ -60,7 +70,10 @@ async def testComm(interaction: Interaction):
 
 
 
-
+@client.tree.command(name="testing", description="used for tests by devs")
+async def testComm(interaction: Interaction):
+    response = "test woo hoo !"    
+    await interaction.response.send_message(response)
 
 
 
