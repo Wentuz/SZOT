@@ -4,7 +4,7 @@ from random import randint
 
 
 
-def get_roll(num_dice, value_dice) -> int:
+def get_roll(num_dice: int, value_dice: int) -> int:
     
     result = []
 

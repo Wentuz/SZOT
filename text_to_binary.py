@@ -1,8 +1,8 @@
-def text_to_binary(text):
+def text_to_binary(text: str) -> str:
     binary_string = ' '.join(format(ord(char), '08b') for char in text)
     return binary_string
 
-def binary_to_text(binary):
+def binary_to_text(binary: str) -> str:
     binary_chunk = binary.split()
     text = ''.join(chr(int(chunk, 2)) for chunk in binary_chunk)
     return text
